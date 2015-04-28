@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 		digitalWrite(trig, LOW);	//초음파 발생하기 전후로, 잡음을 제거하기 위하여 전류를 보내지 않도록 설정
 		while (digitalRead(echo) == 0); //조건부 대기상태, 부하를 덜어주는 코드
 		start_time = micros();		//시간단위 μs
-		while (digitalRead(echo) == 1); //
+		while (digitalRead(echo) == 1); 
 		end_time = micros();
 		distance = (end_time - start_time) / 29. / 2.;  // 초음파의 속도는 29마이크로초 당 1센치(340m/s)를 이동
-		printf("distance %.2f cm \n", distance);		//거리값 출력
+		printf("distance %.2f cm \n", distance);	//거리값 출력
 	}
 	return 0;
 }
